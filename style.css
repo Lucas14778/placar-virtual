@@ -2,77 +2,114 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 body {
-    background-color: #f4f9f4; /* Fundo levemente esverdeado */
+    background-color: #121212; /* Fundo escuro estilo painel de LED */
+    color: #ffffff;
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    color: #1a1a1a;
 }
 
-.container {
-    background-color: #ffffff;
+.placar-container {
+    background-color: #1e1e1e;
     padding: 40px;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
     text-align: center;
-    max-width: 400px;
+    border-top: 5px solid #ffdf00; /* Detalhe amarelo Copa */
     width: 90%;
-    border-top: 6px solid #009c3b; /* Detalhe verde no topo */
+    max-width: 600px;
 }
 
 h1 {
-    color: #009c3b;
-    margin-bottom: 10px;
+    color: #ffdf00;
+    margin-bottom: 30px;
+    text-transform: uppercase;
+    font-size: 24px;
 }
 
-p {
-    margin-bottom: 25px;
+.painel {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.time {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.time h2 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.pontuacao {
+    font-size: 80px;
+    font-weight: bold;
+    background-color: #000000;
+    padding: 10px 30px;
+    border-radius: 10px;
+    color: #00cf4e; /* Verde neon estilo digital */
+    margin-bottom: 20px;
+    min-width: 140px;
+    border: 2px solid #333;
+}
+
+.separador {
+    font-size: 40px;
+    font-weight: bold;
     color: #555;
-    line-height: 1.5;
+}
+
+.controles {
+    display: flex;
+    gap: 10px;
 }
 
 button {
-    background-color: #002776; /* Azul do Brasil */
-    color: white;
-    border: none;
-    padding: 15px 30px;
+    padding: 10px 15px;
     font-size: 16px;
     font-weight: bold;
-    border-radius: 8px;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
     transition: 0.3s;
-    text-transform: uppercase;
 }
 
-button:hover {
-    background-color: #009c3b; /* Fica verde ao passar o mouse */
+.btn-gol {
+    background-color: #009c3b;
+    color: white;
 }
 
-/* Estilos para a caixa que vai revelar a seleção */
-#resultado {
-    margin-top: 30px;
-    padding: 20px;
-    background-color: #ffdf00; /* Amarelo Brasil */
-    border-radius: 8px;
-    transition: opacity 0.5s ease;
+.btn-gol:hover {
+    background-color: #007a2e;
 }
 
-.resultado-oculto {
-    opacity: 0;
-    visibility: hidden;
+.btn-tira {
+    background-color: #d9534f; /* Vermelho para remover gol */
+    color: white;
 }
 
-.resultado-visivel {
-    opacity: 1;
-    visibility: visible;
+.btn-tira:hover {
+    background-color: #c9302c;
 }
 
-#nome-selecao {
-    color: #002776;
-    font-size: 26px;
+.btn-zerar {
+    background-color: #333;
+    color: white;
+    width: 100%;
+    padding: 15px;
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+.btn-zerar:hover {
+    background-color: #222;
 }

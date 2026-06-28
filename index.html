@@ -3,19 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sorteador da Copa do Mundo</title>
+    <title>Placar Virtual da Copa</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="container">
-        <h1>Sorteador da Copa 🏆</h1>
-        <p>Vai rolar a pelada? Clique no botão abaixo para sortear uma seleção para o seu time!</p>
+    <div class="placar-container">
+        <h1>🏆 Copa 2026 - Final</h1>
         
-        <button id="btn-sortear">Sortear Seleção</button>
-        
-        <div id="resultado" class="resultado-oculto">
-            <h2 id="nome-selecao">?</h2>
+        <div class="painel">
+            <!-- Time da Casa -->
+            <div class="time">
+                <h2 id="nome-time-casa">Brasil 🇧🇷</h2>
+                <div class="pontuacao" id="placar-casa">0</div>
+                <div class="controles">
+                    <button class="btn-gol" onclick="adicionarGol('casa')">+ Gol</button>
+                    <button class="btn-tira" onclick="removerGol('casa')">- Gol</button>
+                </div>
+            </div>
+
+            <div class="separador">X</div>
+
+            <!-- Time Visitante -->
+            <div class="time">
+                <h2 id="nome-time-fora">França 🇫🇷</h2>
+                <div class="pontuacao" id="placar-fora">0</div>
+                <div class="controles">
+                    <button class="btn-gol" onclick="adicionarGol('fora')">+ Gol</button>
+                    <button class="btn-tira" onclick="removerGol('fora')">- Gol</button>
+                </div>
+            </div>
         </div>
+
+        <button class="btn-zerar" onclick="zerarPlacar()">Zerar Jogo 🔄</button>
     </div>
 
     <script src="script.js"></script>

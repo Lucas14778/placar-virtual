@@ -1,25 +1,39 @@
-// Lista de seleções participantes
-const selecoes = [
-    "Brasil 🇧🇷", "Argentina 🇦🇷", "França 🇫🇷", 
-    "Alemanha 🇩🇪", "Espanha 🇪🇸", "Inglaterra 🏴󠁧󠁢󠁥󠁮󠁧󠁿", 
-    "Portugal 🇵🇹", "Holanda 🇳🇱", "Itália 🇮🇹", "Uruguai 🇺🇾",
-    "Croácia 🇭🇷", "Bélgica 🇧🇪", "Colômbia 🇨🇴", "Senegal 🇸🇳"
-];
+// Variáveis para armazenar a pontuação
+let golsCasa = 0;
+let golsFora = 0;
 
-// Capturando os elementos do HTML
-const btnSortear = document.getElementById("btn-sortear");
-const resultadoDiv = document.getElementById("resultado");
-const nomeSelecao = document.getElementById("nome-selecao");
+// Capturando os elementos HTML onde os números aparecem
+const placarCasaEl = document.getElementById("placar-casa");
+const placarForaEl = document.getElementById("placar-fora");
 
-// Criando o evento de clique no botão
-btnSortear.addEventListener("click", () => {
-    // Gera um número aleatório entre 0 e o tamanho da lista de seleções
-    const indiceSorteado = Math.floor(Math.random() * selecoes.length);
+// Função para adicionar gol
+function adicionarGol(time) {
+    if (time === 'casa') {
+        golsCasa++;
+        placarCasaEl.textContent = golsCasa;
+    } else if (time === 'fora') {
+        golsFora++;
+        placarForaEl.textContent = golsFora;
+    }
+}
+
+// Função para remover gol (com trava para não ficar negativo)
+function removerGol(time) {
+    if (time === 'casa' && golsCasa > 0) {
+        golsCasa--;
+        placarCasaEl.textContent = golsCasa;
+    } else if (time === 'fora' && golsFora > 0) {
+        golsFora--;
+        placarForaEl.textContent = golsFora;
+    }
+}
+
+// Função para zerar o placar
+function zerarPlacar() {
+    golsCasa = 0;
+    golsFora = 0;
+    placarCasaEl.textContent = golsCasa;
+    placarForaEl.textContent = golsFora;
     
-    // Atualiza o texto do HTML com o nome da seleção sorteada
-    nomeSelecao.textContent = selecoes[indiceSorteado];
-    
-    // Remove a classe que oculta a div e adiciona a que deixa visível
-    resultadoDiv.classList.remove("resultado-oculto");
-    resultadoDiv.classList.add("resultado-visivel");
-});
+    alert("O jogo foi reiniciado!");
+}
