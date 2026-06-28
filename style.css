@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f9f4; /* Fundo levemente esverdeado */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #1a1a1a;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    border-top: 6px solid #009c3b; /* Detalhe verde no topo */
+}
+
+h1 {
+    color: #009c3b;
+    margin-bottom: 10px;
+}
+
+p {
+    margin-bottom: 25px;
+    color: #555;
+    line-height: 1.5;
+}
+
+button {
+    background-color: #002776; /* Azul do Brasil */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    text-transform: uppercase;
+}
+
+button:hover {
+    background-color: #009c3b; /* Fica verde ao passar o mouse */
+}
+
+/* Estilos para a caixa que vai revelar a seleção */
+#resultado {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #ffdf00; /* Amarelo Brasil */
+    border-radius: 8px;
+    transition: opacity 0.5s ease;
+}
+
+.resultado-oculto {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.resultado-visivel {
+    opacity: 1;
+    visibility: visible;
+}
+
+#nome-selecao {
+    color: #002776;
+    font-size: 26px;
+}
